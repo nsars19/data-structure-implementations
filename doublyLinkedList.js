@@ -28,7 +28,6 @@ LinkedList.prototype.delete = function (val) {
   if (this.head) {
     let curr = this.head;
     while (curr) {
-      console.log({ currVal: curr.val });
       if (curr.val === val) {
         if (curr === this.head) {
           this.head = curr.next;
