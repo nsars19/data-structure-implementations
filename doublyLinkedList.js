@@ -51,6 +51,20 @@ LinkedList.prototype.delete = function (val) {
   return this;
 };
 
+LinkedList.prototype.fromArray = function (data) {
+  this.head = new Node(data[0]);
+  let curr = this.head;
+
+  for (let i = 1; i < data.length; i++) {
+    const node = new Node(data[i]);
+    curr.next = node;
+    node.prev = curr;
+    curr = curr.next;
+  }
+
+  return this;
+};
+
 LinkedList.prototype.traverse = function () {
   const vals = [];
   let curr = this.head;
